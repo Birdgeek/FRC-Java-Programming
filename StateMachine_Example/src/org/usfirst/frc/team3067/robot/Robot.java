@@ -1,0 +1,65 @@
+
+package org.usfirst.frc.team3067.robot;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
+
+
+public class Robot extends IterativeRobot {
+ 
+	public enum roboState { OPEN, CLAMPED, LIFTED };
+	roboState state;
+	Joystick rightStick = new Joystick(1);
+	
+    public void robotInit() {
+
+    	state = roboState.OPEN;
+    }
+
+    
+    public void autonomousPeriodic() {
+
+    }
+
+    
+    public void teleopPeriodic() {
+    	
+    	if (rightStick.getRawButton(1)) {
+    		switch (state) {
+			case CLAMPED:
+				state = roboState.LIFTED;
+				break;
+			case LIFTED:
+				state = roboState.OPEN;
+				break;
+			case OPEN:
+				state = roboState.CLAMPED;
+				break;
+			default:
+				state = roboState.OPEN;
+				break;
+    		
+    		}
+    	}
+    	
+    	
+        switch (state) {
+		case CLAMPED:
+			break;
+		case LIFTED:
+			break;
+		case OPEN:
+			break;
+		default:
+			break;
+        
+        	
+        }
+    }
+    
+    
+    public void testPeriodic() {
+    
+    }
+    
+}

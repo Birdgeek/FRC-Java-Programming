@@ -1,0 +1,43 @@
+
+package org.usfirst.frc.team3067.robot;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+
+
+public class Robot extends IterativeRobot {
+ 
+	public enum roboState { OPEN, CLAMPED, LIFTED };
+	roboState state;
+    public void robotInit() {
+
+    	
+    }
+
+    
+    public void autonomousPeriodic() {
+
+    }
+
+    
+    public void teleopPeriodic() {
+    	
+        switch (state) {
+		case CLAMPED:
+			break;
+		case LIFTED:
+			break;
+		case OPEN:
+			break;
+		default:
+			break;
+        
+        	
+        }
+    }
+    
+    
+    public void testPeriodic() {
+    
+    }
+    
+}
