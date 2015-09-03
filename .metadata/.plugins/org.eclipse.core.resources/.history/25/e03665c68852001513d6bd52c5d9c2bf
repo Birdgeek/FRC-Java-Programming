@@ -1,0 +1,43 @@
+
+package org.usfirst.frc.team3067.robot;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+
+
+public class Robot extends IterativeRobot {
+    
+	
+	/*
+	 * (non-Javadoc)
+	 * Run once at the startup of the robot - Setup devices - Setup joystick - "Configuration state"
+	 */
+    public void robotInit() { 
+
+    
+    }
+
+   /*
+    * (non-Javadoc)
+    * Runs periodically - Auton - Driving - Shooting - Vision tracking
+    */
+    public void autonomousPeriodic() {
+
+    }
+
+    /*
+     * (non-Javadoc)
+     * Driver control - Joystick input - reactions to those inputs
+     */
+    public void teleopPeriodic() {
+        
+    }
+    
+    /*
+     * (non-Javadoc)
+     * Test function from the driver station 
+     */
+    public void testPeriodic() {
+    
+    }
+    
+}

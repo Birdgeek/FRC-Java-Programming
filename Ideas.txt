@@ -1,9 +1,9 @@
-- Pneumatics
-- Drive train
-- Motors and Motor Types
-- Joysticks and Joysticks types (inputs)
+- Pneumatics *
+- Drive train *
+- Motors and Motor Types *
+- Joysticks and Joysticks types (inputs) *
 - Teleop Control
-- Autonomous Control
+- Autonomous Control *
 - Smart dashboard
 - State Machine
 - Servos

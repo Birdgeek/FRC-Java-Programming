@@ -1,0 +1,91 @@
+
+package org.usfirst.frc.team3067.robot;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
+
+
+public class Robot extends IterativeRobot {
+	
+    Talon front_right = new Talon(0);
+    Talon front_left = new Talon(1);
+    Talon back_right = new Talon(2);
+    Talon back_left = new Talon(3);
+    
+    Victor shoot = new Victor(4);
+    
+    Jaguar lift = new Jaguar(5);
+    
+    RobotDrive chassis = new RobotDrive(front_left, back_left, front_right, back_right);
+    
+    Joystick rightStick = new Joystick(0);
+    Joystick leftStick = new Joystick(1);
+	
+	/*
+	 * (non-Javadoc)
+	 * Run once at the startup of the robot - Setup devices - Setup joystick - "Configuration state"
+	 */
+    public void robotInit() { 
+
+    
+    }
+
+   /*
+    * (non-Javadoc)
+    * Runs periodically - Auton - Driving - Shooting - Vision tracking
+    */
+    public void autonomousPeriodic() {
+    	
+    	setAllMotors(1.0);
+    	
+    }
+    private void setTurningSpeed(double speed, String side) {
+    	if (side.equalsIgnoreCase("right")) {
+    		front_right.set(speed);
+    		back_right.set(speed);
+    		front_left.set(-speed);
+    		back_left.set(-speed);
+    	}
+    	else if (side.equalsIgnoreCase("left")) {
+    		front_right.set(-speed);
+    		back_right.set(-speed);
+    		front_left.set(speed);
+    		back_left.set(speed);
+    	}
+    }
+
+    private void setAllMotors(double speed) {
+		front_right.set(speed);
+		back_right.set(speed);
+		front_left.set(speed);
+		back_left.set(speed);
+		
+	}
+
+	/*
+     * (non-Javadoc)
+     * Driver control - Joystick input - reactions to those inputs
+     */
+    public void teleopPeriodic() { //Remember you only need one type of robot drive
+    	
+    	chassis.arcadeDrive(rightStick.getY(), rightStick.getX()); // Driving robot with one joystick
+    	
+    	chassis.tankDrive(leftStick.getY(), rightStick.getY()); // 2 joystick setup for driving robot
+    	
+    	chassis.mecanumDrive_Polar(rightStick.getY(), rightStick.getX(), rightStick.getZ()); // Mecanum drive using all 3 axis from a joystick
+        
+    }
+    
+    /*
+     * (non-Javadoc)
+     * Test function from the driver station 
+     */
+    public void testPeriodic() {
+    
+    }
+    
+}
