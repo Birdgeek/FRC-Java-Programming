@@ -4,8 +4,8 @@
 - Joysticks and Joysticks types (inputs) *
 - Teleop Control
 - Autonomous Control *
-- Smart dashboard
-- State Machine
+- Smart dashboard *
+- State Machine *
 - Servos
-- Limit Switches
+- Limit Switches * 
 - Gyros
